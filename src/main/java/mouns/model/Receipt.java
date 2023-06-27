@@ -1,10 +1,12 @@
 package mouns.model;
 
+
 import java.util.Date;
+import java.util.List;
 
 public class Receipt {
 
-	private Article description;
+	private List<Article> articles;
 	private Double totalHT;
 	private Double totalTTC;
 	private Integer tva;
@@ -14,10 +16,10 @@ public class Receipt {
 		super();
 	}
 
-	public Receipt(Article description, Double totalHT, Double totalTTC, Integer tva, Date date) {
+	public Receipt(List<Article> articles, Double totalHT, Double totalTTC, Integer tva, Date date) {
 		super();
 
-		this.description = description;
+		this.articles = articles;
 		this.totalHT = totalHT;
 		this.totalTTC = totalTTC;
 		this.tva = tva;
@@ -25,12 +27,12 @@ public class Receipt {
 	}
 
 
-	public Article getDescription() {
-		return description;
+	public List<Article> getArticles() {
+		return articles;
 	}
 
-	public void setDescription(Article description) {
-		this.description = description;
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
 	}
 
 	public Double getTotalHT() {
@@ -67,9 +69,10 @@ public class Receipt {
 
 	@Override
 	public String toString() {
-		return "Ticket [description=" + description + ", totalHT=" + totalHT + ", totalTTC=" + totalTTC + ", tva="
+		return "Ticket [description=" + articles + ", totalHT=" + totalHT + ", totalTTC=" + totalTTC + ", tva="
 				+ tva + ", date=" + date + "]";
 	}
 
+	
 	
 }

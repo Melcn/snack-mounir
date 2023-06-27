@@ -4,8 +4,7 @@ import java.util.Date;
 
 public class Receipt {
 
-	private Integer id;
-	private Article name;
+	private Article description;
 	private Integer totalHT;
 	private Integer totalTTC;
 	private Integer tva;
@@ -15,30 +14,23 @@ public class Receipt {
 		super();
 	}
 
-	public Receipt(Integer id, Article name, Integer totalHT, Integer totalTTC, Integer tva, Date date) {
+	public Receipt(Article description, Integer totalHT, Integer totalTTC, Integer tva, Date date) {
 		super();
-		this.id = id;
-		this.name = name;
+
+		this.description = description;
 		this.totalHT = totalHT;
 		this.totalTTC = totalTTC;
 		this.tva = tva;
 		this.date = date;
 	}
 
-	public Integer getId() {
-		return id;
+
+	public Article getDescription() {
+		return description;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Article getName() {
-		return name;
-	}
-
-	public void setName(Article name) {
-		this.name = name;
+	public void setDescription(Article description) {
+		this.description = description;
 	}
 
 	public Integer getTotalHT() {
@@ -75,7 +67,7 @@ public class Receipt {
 
 	@Override
 	public String toString() {
-		return "Ticket [id=" + id + ", name=" + name + ", totalHT=" + totalHT + ", totalTTC=" + totalTTC + ", tva="
+		return "Ticket [description=" + description + ", totalHT=" + totalHT + ", totalTTC=" + totalTTC + ", tva="
 				+ tva + ", date=" + date + "]";
 	}
 

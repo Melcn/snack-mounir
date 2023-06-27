@@ -2,42 +2,21 @@ package mouns.model;
 
 public class Article {
 
-	private Integer id_article;
-	private String article_name;
 	private String description;
-	private Integer price;
+	private Double price;
 	private Integer quantity;
-	private Integer totalPriceQuantity;
+	private Double totalPriceQuantity;
 
 	public Article() {
 		super();
 	}
 
-	public Article(Integer id_article, String article_name, String description, Integer price, Integer quantity,
-			Integer totalPriceQuantity) {
+	public Article(String description, Double price, Integer quantity, Double totalPriceQuantity) {
 		super();
-		this.id_article = id_article;
-		this.article_name = article_name;
 		this.description = description;
 		this.price = price;
 		this.quantity = quantity;
 		this.totalPriceQuantity = totalPriceQuantity;
-	}
-
-	public Integer getId_article() {
-		return id_article;
-	}
-
-	public void setId_article(Integer id_article) {
-		this.id_article = id_article;
-	}
-
-	public String getArticle_name() {
-		return article_name;
-	}
-
-	public void setArticle_name(String article_name) {
-		this.article_name = article_name;
 	}
 
 	public String getDescription() {
@@ -48,11 +27,11 @@ public class Article {
 		this.description = description;
 	}
 
-	public Integer getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Integer price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
@@ -64,18 +43,18 @@ public class Article {
 		this.quantity = quantity;
 	}
 
-	public Integer getTotalPriceQuantity() {
+	public Double getTotalPriceQuantity() {
 		return totalPriceQuantity;
 	}
 
-	public void setTotalPriceQuantity(Integer totalPriceQuantity) {
+	public void setTotalPriceQuantity(Double totalPriceQuantity) {
 		this.totalPriceQuantity = totalPriceQuantity;
 	}
 
 	@Override
 	public String toString() {
-		return "Article [id_article=" + id_article + ", article_name=" + article_name + ", description=" + description
-				+ ", price=" + price + ", quantity=" + quantity + "totalPriceQuantity=" + totalPriceQuantity + "]";
+		return "Article [description=" + description + ", price=" + price + ", quantity=" + quantity
+				+ "totalPriceQuantity=" + totalPriceQuantity + "]";
 	}
 
 }

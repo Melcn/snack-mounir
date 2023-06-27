@@ -5,8 +5,8 @@ import java.util.Date;
 public class Receipt {
 
 	private Article description;
-	private Integer totalHT;
-	private Integer totalTTC;
+	private Double totalHT;
+	private Double totalTTC;
 	private Integer tva;
 	private Date date;
 
@@ -14,7 +14,7 @@ public class Receipt {
 		super();
 	}
 
-	public Receipt(Article description, Integer totalHT, Integer totalTTC, Integer tva, Date date) {
+	public Receipt(Article description, Double totalHT, Double totalTTC, Integer tva, Date date) {
 		super();
 
 		this.description = description;
@@ -33,19 +33,19 @@ public class Receipt {
 		this.description = description;
 	}
 
-	public Integer getTotalHT() {
+	public Double getTotalHT() {
 		return totalHT;
 	}
 
-	public void setTotalHT(Integer totalHT) {
+	public void setTotalHT(Double totalHT) {
 		this.totalHT = totalHT;
 	}
 
-	public Integer getTotalTTC() {
+	public Double getTotalTTC() {
 		return totalTTC;
 	}
 
-	public void setTotalTTC(Integer totalTTC) {
+	public void setTotalTTC(Double totalTTC) {
 		this.totalTTC = totalTTC;
 	}
 

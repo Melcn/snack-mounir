@@ -200,21 +200,31 @@ public class Main {
 	public static void generateCheck() {
 
 		Date date = new Date();
-
 		DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
-		System.out.println("*********SNACK MOUNIR********");
-		System.out.println("*****************************");
-		System.out.println("****25 place des tenders*****");
-		System.out.println("*********59000 Lille*********");
-		System.out.println("*****************************");
-		System.out.println("*******03.40.98.97.62********");
-		System.out.println("*****************************");
-		System.out.println("*****************************");
-		System.out.println(shortDateFormat.format(date));
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
+/*description;
+	totalHT;
+	totalTTC;
+	tva;
+	date;*/
+		Integer tva = 20;
+		Double prixHT = 0.0;
+		Double prixTTC = prixHT * tva/100;
+		System.out.println("********* \t SNACK MOUNIR \t ********");
+		System.out.println("******************************************************");
+		System.out.println("\t\t 25 place des tenders \t\t");
+		System.out.println("\t\t 59000 Lille \t\t");
+		System.out.println("******************************************************");
+		System.out.println("\t\t 03.40.98.97.62 \t\t");
+		System.out.println("******************************************************");
+		System.out.println("******************************************************");
+		System.out.println("\t" + shortDateFormat.format(date));
+		System.out.println(" \n ");
+		System.out.println("Description \t Quantité \t Prix U \t Prix Total");
+		System.out.println("******************************************************");
+		System.out.println("\t \t \t \t \t TVA = " + tva + "%");
+		System.out.println("\t \t \t \t \t Prix TTC = " + prixTTC);
+		System.out.println(" \n ");
+		System.out.println(" \n ");
 
 	}
 }

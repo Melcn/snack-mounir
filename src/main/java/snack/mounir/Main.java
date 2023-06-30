@@ -14,7 +14,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
+//TODO: Change menuchoice in dowhile loop
+		
 		List<Article> articles = new ArrayList<Article>();
 		Receipt receipt = new Receipt();
 
@@ -67,7 +68,7 @@ public class Main {
 				default:
 					break;
 				}
-			} while (orderChoice != 1 || orderChoice != 2 || orderChoice != 3 || orderChoice != 4);
+			} while (orderChoice == 0);
 
 			/* ----------------------CHOIX DE LA VIANDE------------------------------ */
 
@@ -110,8 +111,7 @@ public class Main {
 				default:
 					break;
 				}
-			} while (meatChoice != 1 || meatChoice != 2 || meatChoice != 3 || meatChoice != 4 || meatChoice != 5
-					|| meatChoice != 6);
+			} while (meatChoice == 0);
 
 			/* ----------------------CHOIX DU MENU------------------------------ */
 
@@ -139,11 +139,12 @@ public class Main {
 				default:
 					break;
 				}
-			} while (simpleChoice != 1 || simpleChoice != 2 || simpleChoice != 3);
+			} while (simpleChoice == 0);
 			
 			
 			/* ------------------------- AJOUTER ARTICLE A LA COMMANDE -----------------------------*/
 			
+			//TODO: transform description array to string
 			String[] descriptions = { descriptionSimpleOrMenu, descriptionOrder, descriptionMeat };
 			description = Arrays.asList(descriptions).toString();
 
@@ -217,6 +218,8 @@ public class Main {
 
 	public static void printCheck() {
 
+		//TODO:  For loop to print each line
+		
 		Date date = new Date();
 		DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
 		Integer tva = 20;

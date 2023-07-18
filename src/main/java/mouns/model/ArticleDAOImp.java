@@ -2,6 +2,7 @@ package mouns.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,8 +56,23 @@ public class ArticleDAOImp implements IArticleDAO {
 		}
 	}
 
-	public void getDish(int id) {
+	public Dish getDish(int id) {
 
+		PreparedStatement stmtDish;
+		Dish newDish = null;
+		try {
+			stmtDish = conn.prepareStatement("SELECT * FROM articles WHERE id= ?");
+			stmtDish.setInt(1, id);
+			ResultSet res = stmtDish.executeQuery();
+			if(res.next()) {
+				newDish = new Dish(res.getInt("id"), res.getString("caption"), res.getDouble("price"));
+			}
+       
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+		return newDish;
 	}
 
 	public List<Dish> getAllDish() {

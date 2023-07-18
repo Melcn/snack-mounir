@@ -41,6 +41,18 @@ public class ArticleDAOImp implements IArticleDAO {
 
 	public void updateDish(Dish myDish) {
 
+		PreparedStatement stmtUpDish;
+		try {
+			stmtUpDish = conn.prepareStatement("UPDATE articles SET libelle = ?, prix = ? WHERE id = ? ");
+			stmtUpDish.setString(1, myDish.getCaptionDish());
+			stmtUpDish.setDouble(2, myDish.getPriceDish());
+			stmtUpDish.setInt(3, myDish.getIdDish());
+			int nbInserted = stmtUpDish.executeUpdate();
+			System.out.println(nbInserted);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void getDish(int id) {

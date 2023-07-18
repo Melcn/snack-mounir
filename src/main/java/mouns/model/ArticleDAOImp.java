@@ -16,7 +16,7 @@ public class ArticleDAOImp implements IArticleDAO {
 		PreparedStatement stmtAddDish;
 		try {
 
-			stmtAddDish = conn.prepareStatement("INSERT INTO dishes (caption, price) VALUES (?,?)");
+			stmtAddDish = conn.prepareStatement("INSERT INTO articles (caption, price) VALUES (?,?)");
 			stmtAddDish.setString(1, myDish.getCaptionDish());
 			stmtAddDish.setDouble(2, myDish.getPriceDish());
 			int nbInserted = stmtAddDish.executeUpdate();
@@ -27,7 +27,16 @@ public class ArticleDAOImp implements IArticleDAO {
 	}
 
 	public void deleteDish(int id) {
+		PreparedStatement stmtDeleteDish;
+		try {
+			stmtDeleteDish = conn.prepareStatement("DELETE FROM articles WHERE id = ?");
+			stmtDeleteDish.setInt(1, id);
+			int nbInserted = stmtDeleteDish.executeUpdate();
+			System.out.println(nbInserted);
 
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void updateDish(Dish myDish) {

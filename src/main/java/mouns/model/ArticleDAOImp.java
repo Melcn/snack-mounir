@@ -77,6 +77,19 @@ public class ArticleDAOImp implements IArticleDAO {
 
 	public List<Dish> getAllDish() {
 		List<Dish> myDishes = new ArrayList<Dish>();
+		PreparedStatement stmtDish;
+		try {
+			stmtDish = conn.prepareStatement("SELECT * FROM articles");
+			
+			ResultSet res = stmtDish.executeQuery();	
+			while(res.next()) {
+				myDishes.add(new Dish(res.getInt("id"),res.getString("caption") ,res.getInt("price") ));				
+        	   	}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return myDishes;
 	}
 }

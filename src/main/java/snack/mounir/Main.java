@@ -140,10 +140,12 @@ public class Main {
 					break;
 				}
 			} while (simpleChoice != 1 || simpleChoice != 2 || simpleChoice != 3);
-			
-			
-			/* ------------------------- AJOUTER ARTICLE A LA COMMANDE -----------------------------*/
-			
+
+			/*
+			 * ------------------------- AJOUTER ARTICLE A LA COMMANDE
+			 * -----------------------------
+			 */
+
 			String[] descriptions = { descriptionSimpleOrMenu, descriptionOrder, descriptionMeat };
 			description = Arrays.asList(descriptions).toString();
 
@@ -220,27 +222,31 @@ public class Main {
 		Date date = new Date();
 		DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
 		Integer tva = 20;
-		Double prixHT = 0.0;
-		Double prixTTC = prixHT * tva / 100;
+		Double priceHT = 0.0;
+		Double prixTTC = priceHT * tva / 100;
+
+		Double totalPrice = 0.00;
 		List<Article> articles = new ArrayList<Article>();
 
-		System.out.println("********* \t SNACK MOUNIR \t ********");
-		System.out.println("******************************************************");
-		System.out.println("\t\t 25 place des tenders \t\t");
-		System.out.println("\t\t 59000 Lille \t\t");
-		System.out.println("******************************************************");
-		System.out.println("\t\t 03.40.98.97.62 \t\t");
-		System.out.println("******************************************************");
-		System.out.println("******************************************************");
-		System.out.println("\t" + shortDateFormat.format(date));
-		System.out.println(" \n ");
-		System.out.println("Description \t Quantité \t Prix U \t Prix Total");
-		System.out.println(articles);
-		System.out.println("******************************************************");
-		System.out.println("\t \t \t \t \t TVA = " + tva + "%");
-		System.out.println("\t \t \t \t \t Prix TTC = " + prixTTC);
-		System.out.println(" \n ");
-		System.out.println(" \n ");
+		System.out.println("\n\n                     SNACK MOUNIR                    ");
+		System.out.println("            151 Rue des Postes, 59000 Lille          ");
+		System.out.println("                   TEL : 09 80 91 36 05                ");
+		System.out.println("                   https://snackmounir.fr/                \n\n");
+		System.out.println(shortDateFormat.format(date));
+		System.out.println("================== TICKET DE CAISSE ==================\n");
+		System.out.println("Libéllé\t\tQuantité\tP U\t\tTotal\n");
 
+		for (Article article : articles) {
+			System.out.printf("%s\t\t%d\t\t%.2f%s\t\t%.2f%s%n", article.getDescription(), article.getQuantity(),
+					article.getPrice(), " €", article.getTotalPriceQuantity(), " €");
+			prixTTC += article.getTotalPriceQuantity();
+
+		}
+
+		totalPrice = prixTTC;
+		System.out.println("\n======================================================\n");
+
+		System.out.printf("\t\t\t\tT.V.A : \t%.2f%s%n" + tva + " €");
+		System.out.printf("\t\t\t\tTotal : \t%.2f%s%n" + totalPrice + " €");
 	}
 }
